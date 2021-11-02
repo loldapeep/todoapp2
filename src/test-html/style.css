@@ -1,0 +1,24 @@
+#bg{
+    background-image: url('https://cdn.lifehack.org/wp-content/uploads/2020/05/effective-to-do-list.jpg');
+    background-size: cover;
+}
+#sign-in-form{
+    margin-left: 33%;
+    margin-right: 33%;
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#form-wrap{
+    height: 40vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+#bg2{
+    background-image: url('https://ichef.bbci.co.uk/images/ic/1200xn/p072v6bw.jpg');
+    background-size: cover;
+}
