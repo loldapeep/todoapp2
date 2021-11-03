@@ -1,7 +1,7 @@
 import "./App.css";
-import TextField from "@material-ui/core/TextField";
+import TextField from "@mui/material/TextField";
 import { useState, useEffect } from "react";
-import { Button } from "@material-ui/core";
+import { Button } from "@mui/material";
 import { db } from "./firebase_config";
 import firebase from "firebase";
 import TodoListItem from "./Todo";
@@ -15,7 +15,7 @@ function App() {
   }, []); // blank to run only on first launch
 
   function getTodos() {
-    db.collection("todos").onSnapshot(function (querySnapshot) {
+    db.collection("todos").orderBy('timestamp', 'desc').onSnapshot(function (querySnapshot) {
       setTodos(
         querySnapshot.docs.map((doc) => ({
           id: doc.id,
@@ -49,13 +49,14 @@ function App() {
           width: "100%",
         }}
       >
-        <h1>Sanskar Tiwari Todos App 😃</h1>
+        <h1>Your todo list</h1>
         <form>
           <TextField
             id="standard-basic"
             label="Write a Todo"
             value={todoInput}
             style={{ width: "90vw", maxWidth: "500px" }}
+            variant="standard"  
             onChange={(e) => setTodoInput(e.target.value)}
           />
           <Button

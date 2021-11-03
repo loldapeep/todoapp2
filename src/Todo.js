@@ -1,6 +1,7 @@
 import React from "react";
-import { ListItem, ListItemText, Button } from "@material-ui/core";
+import { ListItem, ListItemText, Button, IconButton } from "@mui/material";
 import { db } from "./firebase_config";
+import DeleteIcon from "@mui/icons-material/Delete"
 
 export default function TodoListItem({ todo, inprogress, id }) {
   function toggleInProgress() {
@@ -22,10 +23,13 @@ export default function TodoListItem({ todo, inprogress, id }) {
         />
       </ListItem>
 
-      <Button onClick={toggleInProgress}>
+      <Button varient="contained" color={inprogress ? "success" : "secondary"} onClick={toggleInProgress}>
         {inprogress ? "Done" : "UnDone"}
       </Button>
-      <Button onClick={deleteTodo}>X</Button>
+      <IconButton color="error" aria-label="delete" onClick={deleteTodo} size="large">
+  <DeleteIcon />
+    </IconButton>
+      
     </div>
   );
 }
